@@ -1,41 +1,71 @@
-# Supriya Polepalli, Full Stack Engineer
+# Supriya Polepalli | Portfolio
 
-My portfolio site. It is one file, `index.html`, with no build step and no dependencies.
+Personal portfolio of Supriya Polepalli, a full stack engineer who builds web applications, search systems, streaming data pipelines and LLM agents.
 
-Live site: https://supriya-polepalli.github.io
+**Live site:** https://supriya-polepalli.github.io
 
-## What is inside
+## About this site
 
-* About, work history and four AI projects
-* An interactive replay of a guarded multi agent run
-* Stack overview
-* Light and dark mode that follows the visitor's device
+A fast, single page portfolio written in plain HTML, CSS and a small amount of JavaScript. There is no framework, no build step and no external dependencies, so it loads instantly and is easy to maintain.
 
-## Publish with GitHub Pages
+## Highlights
 
-1. Go to github.com, click the plus icon, then New repository.
-2. Name it `YOUR_USERNAME.github.io` and set it to Public.
-3. Click Add file, then Upload files. Upload `index.html` and this `README.md`, then commit.
-4. Open Settings, then Pages. Under Build and deployment choose Deploy from a branch, pick `main` and `/ (root)`, then Save.
-5. Wait one to two minutes. The site goes live at `https://YOUR_USERNAME.github.io`.
+* **Work history** across Glix, SAP and Tata Consultancy Services, with measurable results for each role
+* **Four AI projects**
+  * Enterprise Agentic Search Copilot: hybrid search, reranking and LLM judge evaluation
+  * Distributed AI Analytics and Text to SQL Agents: schema grounding and self correcting retries
+  * MCP Multi Agent Workflow and Tool Orchestrator: LangGraph, FastAPI, approval gates and token budgets
+  * Autonomous Web Extraction and Semantic Discovery Engine: Next.js, Elasticsearch and LLM extraction
+* **Interactive replay** of a guarded multi agent run, showing planning, tool calls, budget checks and human approval
+* **Responsive layout** with a sticky sidebar on desktop and a stacked layout on phones
+* **Automatic light and dark mode** that follows the visitor's device settings
 
-## Before you publish
+## Tech
 
-1. Open `index.html` and search for `YOUR-GITHUB-USERNAME`. Replace it with your GitHub username (2 places).
-2. Rewrite the About paragraphs in your own words.
-3. Check that every number matches your resume and LinkedIn.
-4. Add a link for each project once its repo is public.
+* HTML5 and CSS3 (grid, custom properties, media queries)
+* Vanilla JavaScript for the section highlighting and the agent replay
+* Hosted on GitHub Pages
 
-## Repos to pin on your profile
+## Project structure
 
-1. `opppulse_ai`: full stack AI search with Next.js, Elasticsearch and LLM extraction
-2. `agentic_rag_copilot`: hybrid search, reranking and LLM judge evaluation
-3. `text_to_sql_agents`: schema grounding and self correcting query retries
-4. `mcp_orchestrator`: LangGraph, FastAPI and MCP with approval gates and token budgets
+```
+supriya-polepalli.github.io/
+  index.html     the entire site
+  README.md      this file
+```
 
-Keep company code and any API keys out of public repos.
+## Run locally
+
+```
+git clone https://github.com/supriya-polepalli/supriya-polepalli.github.io.git
+cd supriya-polepalli.github.io
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000 in your browser. You can also open `index.html` directly.
+
+## Deploy
+
+The site is served by GitHub Pages from the `main` branch.
+
+1. Open the repository Settings, then Pages.
+2. Under Build and deployment, choose Deploy from a branch.
+3. Select `main` and `/ (root)`, then Save.
+4. Every commit to `main` updates the live site within a minute or two.
+
+## Customize
+
+* Colors are set once at the top of `index.html` in the `:root` block (`--blue`, `--hi`, `--bg`, `--ink`)
+* Work history lives in the `#work` section
+* Projects live in the `#project` section
+* Skills live in the `#stack` section
 
 ## Contact
 
-priyapolepalli30@gmail.com
-linkedin.com/in/supriyapolepalli
+* Email: priyapolepalli30@gmail.com
+* LinkedIn: https://linkedin.com/in/supriyapolepalli
+* GitHub: https://github.com/supriya-polepalli
+
+## License
+
+The code of this site is free to learn from. The text, résumé content and personal details belong to Supriya Polepalli and may not be reused.
