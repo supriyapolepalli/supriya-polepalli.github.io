@@ -2,7 +2,7 @@
 
 My portfolio site. It is one file, `index.html`, with no build step and no dependencies.
 
-Live site: https://YOUR_USERNAME.github.io
+Live site: https://supriya-polepalli.github.io
 
 ## What is inside
 
