@@ -2,7 +2,7 @@
 
 Personal portfolio of Supriya Polepalli, a full stack engineer who builds web applications, search systems, streaming data pipelines and LLM agents.
 
-**Live site:** https://supriya-polepalli.github.io
+**Live site:**  https://supriyapolepalli.github.io/supriya-polepalli.github.io/
 
 ## Highlights
 
