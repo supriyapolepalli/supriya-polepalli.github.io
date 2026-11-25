@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supriya Polepalli · Full-Stack Engineer</title>
+<meta name="description" content="Supriya Polepalli, full-stack engineer in Sunnyvale. React, Node, search, streaming data and LLM pipelines.">
+<style>
+:root{
+  --bg:#f5f6fa; --ink:#0c1226; --soft:#525a70; --rule:#dde0ea; --blue:#2f45ff; --hi:#ffe45c; --panel:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b0f1e; --ink:#eef0f8; --soft:#9aa3bb; --rule:#242b42; --blue:#7f8fff; --hi:#6b5b00; --panel:#121830}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--blue)}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;padding:48px 36px;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between}
+aside h1{font-size:32px;line-height:1.1;font-weight:800;letter-spacing:-.03em}
+aside .role{margin-top:10px;color:var(--soft);font-size:16px}
+aside nav{margin-top:44px;display:flex;flex-direction:column;gap:10px;font-weight:600;font-size:15px}
+aside nav a{color:var(--soft);text-decoration:none;display:flex;gap:12px;align-items:center}
+aside nav a:before{content:"";width:18px;height:2px;background:var(--rule);transition:.2s}
+aside nav a:hover,aside nav a.on{color:var(--ink)}
+aside nav a:hover:before,aside nav a.on:before{width:34px;background:var(--blue)}
+aside .links{font-size:14px;color:var(--soft);display:flex;flex-direction:column;gap:6px}
+aside .links a{color:var(--ink);text-decoration:none;font-weight:600}
+aside .links a:hover{color:var(--blue)}
+main{padding:64px 56px 80px;max-width:820px}
+section{margin-bottom:72px;scroll-margin-top:30px}
+h2{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:22px}
+.about p{font-size:22px;line-height:1.55;margin-bottom:16px;letter-spacing:-.01em}
+mark{background:linear-gradient(transparent 58%,var(--hi) 58%);color:inherit}
+.row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--rule)}
+.row:last-child{border-bottom:1px solid var(--rule)}
+.row .d{font-size:14px;color:var(--soft);padding-top:3px}
+.row h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.row .t{color:var(--soft);font-size:15px;margin-bottom:10px}
+.row ul{padding-left:18px}
+.row li{margin-bottom:6px;font-size:16px}
+.row li::marker{color:var(--blue)}
+.proj{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:28px}
+.proj h3{font-size:24px;letter-spacing:-.02em;margin-bottom:4px}
+.proj .sub{color:var(--soft);font-size:15px;margin-bottom:18px}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.steps span{background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:6px 12px;font-size:14px;font-weight:600}
+.steps span+span:before{content:"→";color:var(--blue);margin-right:10px;font-weight:800}
+.nums{display:flex;gap:34px;flex-wrap:wrap;margin:20px 0 6px}
+.nums b{display:block;font-size:30px;letter-spacing:-.03em;color:var(--blue)}
+.nums span{font-size:13px;color:var(--soft)}
+.proj+.proj{margin-top:18px}
+.proj .when{font-size:13px;color:var(--soft);float:right;margin-top:8px}
+.proj .tags{color:var(--soft);font-size:14px;margin-bottom:14px}
+.proj ul{padding-left:18px;margin-top:6px}
+.proj li{margin-bottom:8px;font-size:16px}
+.proj li::marker{color:var(--blue)}
+.steps .loop{border-color:var(--blue);color:var(--blue)}
+.trace{margin-top:18px;background:#0c1226;color:#dfe5f7;border-radius:8px;padding:16px 18px;font:14px/1.6 ui-monospace,Menlo,Consolas,monospace}
+.trace button{background:#2f45ff;color:#fff;border:0;border-radius:5px;padding:7px 14px;font:600 13px system-ui,sans-serif;cursor:pointer}
+.trace button:disabled{opacity:.5;cursor:default}
+.trace ol{list-style:none;margin-top:12px;min-height:20px}
+.trace li{padding:3px 0;opacity:0;animation:tin .3s forwards}
+.trace li b{color:#ffe45c;font-weight:600}
+.trace li.gate b{color:#ff9d7a}
+.trace .cap{font:12px system-ui,sans-serif;color:#8d97b5;margin-top:8px}
+@keyframes tin{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:12px 20px;font-size:16px}
+.skills dt{font-weight:700}
+.skills dd{color:var(--soft)}
+.contact a.mail{font-size:28px;font-weight:800;letter-spacing:-.02em;text-decoration:none;background:linear-gradient(transparent 62%,var(--hi) 62%);color:var(--ink)}
+.foot{margin-top:40px;font-size:13px;color:var(--soft)}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--rule);padding:32px 22px;gap:22px}
+  aside nav{flex-direction:row;flex-wrap:wrap;margin-top:20px;gap:6px 18px}
+  aside nav a:before{display:none}
+  main{padding:40px 22px 60px}
+  .about p{font-size:19px}
+  .row,.skills{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div>
+    <h1>Supriya<br>Polepalli</h1>
+    <p class="role">Full-stack engineer<br>Sunnyvale, CA</p>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#project">Projects</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="links">
+    <a href="mailto:priyapolepalli30@gmail.com">Email</a>
+    <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>
+    <a href="https://linkedin.com/in/supriyapolepalli">LinkedIn</a>
+  </div>
+</aside>
+
+<main>
+<section id="about" class="about">
+  <h2>About</h2>
+  <p>I'm a full-stack engineer with six years of experience at TCS, SAP and now Glix. I like the part of a product where a clean interface meets <mark>messy data and a backend that has to hold up</mark>.</p>
+  <p>Recently that has meant search, streaming pipelines and LLMs: getting data in, making it fast, and making it hard to break. I also tend to become the person who sets up tests, monitoring and release habits for the team, and I've come to enjoy that part of the job.</p>
+</section>
+
+<section id="work">
+  <h2>Work</h2>
+  <div class="row">
+    <div class="d">Mar 2026 – now<br>New York</div>
+    <div>
+      <h3>Glix</h3><div class="t">Full Stack and Distributed Systems Engineer</div>
+      <ul>
+        <li>Led the 0-to-1 design of a RAG engine inside the Glix payment app. It routes transactions and enforces budget controls across 10+ banking APIs.</li>
+        <li>Built Node.js, Python and C++ services on replicated SQL with Redis caching and tuned search indexes, running at 99.9% uptime.</li>
+        <li>Built Kafka and Flink pipelines handling 500M+ events a day. A/B tests on the results cut response times by 40%.</li>
+        <li>Wrote verification and filtering pipelines on Docker and Kubernetes that reduced manual review by 45% across 1M+ yearly workflows.</li>
+        <li>Brought in test-driven development and QA automation. Coverage went above 85% and production bugs fell 80%.</li>
+        <li>Set up Prometheus alerts and Grafana dashboards, improving alert accuracy by 35%.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d">Aug 2022 – Jun 2024<br>Bangalore</div>
+    <div>
+      <h3>SAP</h3><div class="t">Associate Developer</div>
+      <ul>
+        <li>Upgraded core React and TypeScript components for accessibility. 5K+ monthly users, and adoption of inclusive features rose 20%.</li>
+        <li>Built a GenAI copilot (LLMs, RAG, prompt engineering) that automated Monthly Business Reviews for 50+ small businesses and cut analysis time by 60%.</li>
+        <li>Ran sprints in Azure DevOps with scrum and kanban. Release velocity improved 35%.</li>
+        <li>Tuned SQL pipelines for 40% lower latency, enabling real-time analytics on 10TB+ of data.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d">Feb 2021 – Jan 2023<br>Hyderabad</div>
+    <div>
+      <h3>Tata Consultancy Services</h3><div class="t">Software Engineer, Salesforce Cloud Infrastructure</div>
+      <ul>
+        <li>Built an Angular support portal for 2M+ monthly customers. Live agent calls dropped 30%.</li>
+        <li>Wrote Python and PostgreSQL ETL for millions of daily financial transactions. Reconciliation delays fell 40% and finance teams saved 200+ hours a month.</li>
+        <li>Worked with PMs, architects and QA across 5+ offices. Escalations dropped 20%.</li>
+        <li>Used C++ and test engineering to improve reliability of services used by 10M+ people.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <h2>Projects</h2>
+
+  <div class="proj">
+    <span class="when">Jan 2025 – Apr 2025</span>
+    <h3>Enterprise Agentic Search Copilot</h3>
+    <div class="tags">Azure AI · Llama · LangChain · RAG · vector search</div>
+    <div class="steps"><span>Semantic chunking</span><span>Hybrid vector search</span><span>Cross-encoder rerank</span><span>Agent answer</span><span>LLM-judge eval</span></div>
+    <ul>
+      <li>Built an agentic RAG system that combines semantic chunking, hybrid vector search and cross-encoder reranking. Complex enterprise queries resolve in under 1.2s.</li>
+      <li>Wrote automated evaluation suites where an LLM judge scores faithfulness, context recall and citation grounding. Unsupported answers dropped 35% across internal knowledge bases.</li>
+    </ul>
+    <div class="nums"><div><b>&lt;1.2s</b><span>per complex query</span></div><div><b>−35%</b><span>unsupported responses</span></div></div>
+  </div>
+
+  <div class="proj">
+    <span class="when">Jun 2025 – Dec 2025</span>
+    <h3>Distributed AI Analytics and Text-to-SQL Agents</h3>
+    <div class="tags">Python · SQL · REST APIs · Google Cloud · A/B testing</div>
+    <div class="steps"><span>Question</span><span>Schema grounding</span><span>Generate SQL</span><span>Execute</span><span class="loop">Error? rewrite and retry</span><span>Answer</span></div>
+    <ul>
+      <li>Built multi-agent analytics workflows on Google Cloud. Agents ground themselves in the database schema and retry failed queries with corrections, which raised query execution accuracy by 32%.</li>
+      <li>Added automated A/B testing and real-time telemetry monitors on production datasets, cutting manual experiment analysis by 40%.</li>
+    </ul>
+    <div class="nums"><div><b>+32%</b><span>query execution accuracy</span></div><div><b>−40%</b><span>manual experiment analysis</span></div></div>
+  </div>
+
+  <div class="proj">
+    <span class="when">Jan 2026 – Mar 2026</span>
+    <h3>MCP Multi-Agent Workflow and Tool Orchestrator</h3>
+    <div class="tags">Python · MCP · LangGraph · FastAPI · Docker</div>
+    <ul>
+      <li>Built a stateful multi-agent orchestration service with LangGraph, FastAPI and the Model Context Protocol. It connects foundation models to typed enterprise REST APIs, databases and sandboxed execution tools.</li>
+      <li>Added step-level observability, token budget caps and human-in-the-loop approval gates, all running in Docker. Workflow reliability held at 99.9% and task completion latency fell 28%.</li>
+    </ul>
+    <div class="nums"><div><b>99.9%</b><span>workflow reliability</span></div><div><b>−28%</b><span>task completion latency</span></div></div>
+    <div class="trace" id="trace">
+      <button id="run">Replay a guarded run</button>
+      <ol id="log"></ol>
+      <div class="cap">Illustrative walkthrough of how the guardrails fit together. Not production data.</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <span class="when">Aug 2025 – Nov 2025</span>
+    <h3>Autonomous Web Extraction and Semantic Discovery Engine</h3>
+    <div class="tags">Next.js · TypeScript · Elasticsearch · Python · Redis · PostgreSQL</div>
+    <div class="steps"><span>Web pages</span><span>LLM extraction</span><span>Dedupe</span><span>Semantic ranking</span><span>Freshness filter</span><span>Search UI</span></div>
+    <ul>
+      <li>Built a full-stack AI search platform. LLM structured-extraction pipelines parse unstructured pages and deduplicate records, and clean matches are served in under 100ms.</li>
+      <li>Wrote semantic ranking agents, vector similarity scoring and automated freshness filters to judge relevance across 100K+ live listings.</li>
+    </ul>
+    <div class="nums"><div><b>&lt;100ms</b><span>per search</span></div><div><b>100K+</b><span>live listings indexed</span></div></div>
+    <p style="margin-top:14px;font-size:15px"><a href="https://github.com/YOUR-GITHUB-USERNAME/opppulse-ai">Code on GitHub</a></p>
+  </div>
+</section>
+
+<section id="stack">
+  <h2>Stack</h2>
+  <dl class="skills">
+    <dt>Frontend</dt><dd>React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Angular</dd>
+    <dt>Backend</dt><dd>Node.js, Python, FastAPI, C++, REST, GraphQL, Stripe API</dd>
+    <dt>Data</dt><dd>PostgreSQL, Elasticsearch, Redis, MongoDB, Firebase, Azure SQL, Kafka, Flink, Spark</dd>
+    <dt>AI</dt><dd>RAG, LangChain, LangGraph, MCP, agent evaluation (LLM judges), text-to-SQL, OpenAI GPT, LLaMA, Hugging Face, PyTorch, Azure AI</dd>
+    <dt>Infra</dt><dd>Docker, Kubernetes, Terraform, AWS, GCP, Azure, CI/CD, Prometheus, Grafana</dd>
+  </dl>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p style="margin-bottom:12px">I'm open to full-stack and engineering lead roles.</p>
+  <a class="mail" href="mailto:priyapolepalli30@gmail.com">priyapolepalli30@gmail.com</a>
+  <div class="foot">M.S. Information Systems, University of Cincinnati</div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+  var run=document.getElementById('run'),log=document.getElementById('log');
+  var T=[
+    ['planner','<b>plan</b> break the task into 3 typed tool calls'],
+    ['tool','<b>mcp</b> call REST tool, arguments validated against its schema'],
+    ['guard','<b>budget</b> token usage checked against the cap, within limit'],
+    ['tool','<b>sandbox</b> run generated code in an isolated container'],
+    ['gate','<b>approval</b> write action paused, waiting for a human to approve'],
+    ['tool','<b>resume</b> approved, action executed'],
+    ['done','<b>done</b> result returned, every step saved to the trace']
+  ];
+  if(run)run.onclick=function(){
+    run.disabled=true;log.innerHTML='';
+    T.forEach(function(s,i){
+      setTimeout(function(){
+        var li=document.createElement('li');li.innerHTML='› '+s[1];if(s[0]==='gate')li.className='gate';log.appendChild(li);
+        if(i===T.length-1)run.disabled=false;
+      },i*650);
+    });
+  };
+  var links=[].slice.call(document.querySelectorAll('#nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
+</body>
+</html>
