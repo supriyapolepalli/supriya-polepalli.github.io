@@ -4,10 +4,6 @@ Personal portfolio of Supriya Polepalli, a full stack engineer who builds web ap
 
 **Live site:** https://supriya-polepalli.github.io
 
-## About this site
-
-A fast, single page portfolio written in plain HTML, CSS and a small amount of JavaScript. There is no framework, no build step and no external dependencies, so it loads instantly and is easy to maintain.
-
 ## Highlights
 
 * **Work history** across Glix, SAP and Tata Consultancy Services, with measurable results for each role
@@ -20,11 +16,7 @@ A fast, single page portfolio written in plain HTML, CSS and a small amount of J
 * **Responsive layout** with a sticky sidebar on desktop and a stacked layout on phones
 * **Automatic light and dark mode** that follows the visitor's device settings
 
-## Tech
 
-* HTML5 and CSS3 (grid, custom properties, media queries)
-* Vanilla JavaScript for the section highlighting and the agent replay
-* Hosted on GitHub Pages
 
 ## Project structure
 
